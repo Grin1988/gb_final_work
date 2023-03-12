@@ -4,18 +4,21 @@
 // решение не рекомендуется пользоваться коллекциями, лучше обойтись 
 // исключительно массивами.
 
-Console.WriteLine("Введите массив строк разделенные пробелами: ");
-string[] inputArray = Console.ReadLine().Split(' '); // Преобразование string в string[] и его запись
 
-List<string> resultList = new List<string>();
+Console.WriteLine("Введите массив строк разделенные пробелами: "); // Вывод на экран сообщения с просьбой ввести массив строк.
+string[] inputArray = Console.ReadLine().Split(' ');               // Создание строковой переменной input и запись данных с клавиатуры 
+                                                                   //с использованием метода Console.ReadLine().
 
-foreach (string s in inputArray)
+List<string> resultList = new List<string>();                     // Создание списка строк resultList.
+
+foreach (string s in inputArray)                                  // Начало цикла, который пробегается по каждому элементу массива inputArray.
 {
-    if (s.Length <= 3)
+    if (s.Length <= 3)                                            // Если длина текущей строки меньше либо равна трем символам, 
+                                                                  //то выполняется следующая строка кода.
     {
-        resultList.Add(s);
+        resultList.Add(s);                                       // Добавление текущей строки в результативный список resultList.
     }
 }
-System.Console.WriteLine();
-Console.WriteLine("Результирующий массив строк:");
-Console.WriteLine("[" + string.Join(", ", resultList) + "]");
+System.Console.WriteLine();                                     // Вывод пустой строки для удобочитаемости результата на экране.
+Console.WriteLine("Результирующий массив строк:");              // Вывод на экран сообщения о том, что далее идет результирующий массив строк.
+Console.WriteLine("[" + string.Join(", ", resultList) + "]");   // Объединение элементов списка с помощью метода Join и вывод на экран. 
